@@ -58,16 +58,12 @@ class Part2:
          columnMetaData = DataFrameUtilities.GetColumnMetaData(titanicDataFrame)
 
          # 4. Replace the missing values in "Age" and "Fare" columns with 0 values, and visualise in a scatterplot
-         titanicDataFrameWithNoNulls = titanicDataFrame.copy()
-
-         DataFrameUtilities.ReplaceNullValues(titanicDataFrameWithNoNulls, 0)
+         titanicDataFrameWithNoNulls = DataFrameUtilities.GetReplaceNullValues(titanicDataFrame, 0)
          Graph.DrawScatterGraph(2, titanicDataFrameWithNoNulls.Age, titanicDataFrameWithNoNulls.Fare, 'Age', 'Fare', 'Part2-Question4', True)
 
          # 5. Replace the missing values in "Age" and "Fare" columns with the mean of each column, and visualise in a scatterplot
-         titanicDataFrameWithMean = titanicDataFrame.copy()
-
-         DataFrameUtilities.ReplaceNullValuesWithMean(titanicDataFrameWithMean, columnMetaData)
-         Graph.DrawScatterGraph(3, titanicDataFrameWithMean.Age, titanicDataFrameWithMean.Fare, 'Age', 'Fare', 'Part2-Question4', True)
+         titanicDataFrameWithMean = DataFrameUtilities.GetReplaceNullValuesWithMean(titanicDataFrame, columnMetaData)
+         Graph.DrawScatterGraph(3, titanicDataFrameWithMean.Age, titanicDataFrameWithMean.Fare, 'Age', 'Fare', 'Part2-Question5', True)
          
          print('finished part 2\n')
 
@@ -85,9 +81,7 @@ class Part3:
          # columnMetaData contains a dictionary of each column of a given dataframe. The min, max, mean, nullvalue counts
          columnMetaData = DataFrameUtilities.GetColumnMetaData(tuberculosisDataFrame)
 
-         tuberculosisDataFrameWithMean = tuberculosisDataFrame.copy()
-
-         DataFrameUtilities.ReplaceNullValuesWithMean(tuberculosisDataFrameWithMean, columnMetaData)
+         tuberculosisDataFrameWithMean = DataFrameUtilities.GetReplaceNullValuesWithMean(tuberculosisDataFrame, columnMetaData)
          Graph.DrawHistGraph(4, tuberculosisDataFrameWithMean.e_prev_100k_hi, bin, 'e_prev_100k_hi', 'Frequency', 'Part3-Question3', True)
          
          # 4. Apply a log transformation on the data. Numpy has a log function. and visualise. Observe the changes
