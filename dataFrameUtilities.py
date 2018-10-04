@@ -33,7 +33,7 @@ class DataFrameUtilities:
     # Returns a new DataFrame
     # dataframe [dataframe] - the dataframe from pandas library
     # newValue [object] - new value to replace null value with in in each cell
-    def ReplaceNullValues(dataframe, newValue):
+    def GetReplaceNullValues(dataframe, newValue):
        dataFrameWithNewValue = dataframe.copy()
 
        columNames = dataframe.columns
@@ -50,7 +50,7 @@ class DataFrameUtilities:
     # Returns a new DataFrame
     # dataframe [dataframe] - the dataframe from pandas library
     # columnMetaDatas [dictionary of <columnName, ColumnMetaData>] - the columnMetaData with the mean for each column
-    def ReplaceNullValuesWithMean(dataframe, columnMetaDatas):
+    def GetReplaceNullValuesWithMean(dataframe, columnMetaDatas):
        dataFrameWithMean = dataframe.copy()
 
        columNames = dataframe.columns
