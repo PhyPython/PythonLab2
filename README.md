@@ -1,5 +1,13 @@
 # PythonLab2
 
+## Instalation
+
+### python -m pip install --upgrade pip
+### python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+### python -m pip install xlrd
+
+## Description
+
 You can open the file PythonLab2 in Spyder to run everything. (PythonLab2 file is supposed to be the main entry point of where we start our application this uses the class Lab2 which is in the file Lab2.py which has 3 methods Part1, Part2 and Part3)
 
 there is 3 class files that help with seperating out the functionality so it can be re-used by passing in a dataframe.
